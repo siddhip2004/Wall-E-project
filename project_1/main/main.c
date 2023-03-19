@@ -28,7 +28,7 @@ void Task_Handle()
     vTaskResume(fib_blink);
     
     }
-    }
+ }
     
     vTaskDelete(NULL);
 }
