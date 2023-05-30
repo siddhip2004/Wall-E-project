@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "sra_board.h"
+#include "declaration.h"
 
 
 static TaskHandle_t series_blink;
@@ -125,7 +122,7 @@ void FIB_LED_BLINK()
 }
 
 
-void app_main()
+/*void app_main()
 {
    
    
@@ -137,6 +134,6 @@ void app_main()
     
     xTaskCreate(&Task_Handle , "task_handle" , 4096, NULL, 0, &task_handle);
     
-}
+}*/
 
 
