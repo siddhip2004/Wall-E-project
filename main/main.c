@@ -6,9 +6,10 @@ static TaskHandle_t second_func;
 
 
 static runtask p;
-
+ 
 void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
 {
+    ESP_LOGI("declaration", "run_func");
 
     enable_switches();
     if (p.s1 == 1)
@@ -66,13 +67,13 @@ void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
     while(1){
 
     if(read_switch(p.s1)){
-    vTaskSuspend(second_func);
+    ESP_LOGI("declaration", "func1"); 
     vTaskResume(first_func);   
     }
 
 
     else if (read_switch(p.s2)){
-    vTaskSuspend(first_func);
+    ESP_LOGI("declaration", "func2"); 
     vTaskResume(second_func);   
     }
 
