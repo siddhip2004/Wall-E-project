@@ -70,10 +70,13 @@ void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
     vTaskResume(first_func);   
     }
 
-    if (read_switch(p.s2)){
+
+    else if (read_switch(p.s2)){
     vTaskSuspend(first_func);
     vTaskResume(second_func);   
     }
+
+    vTaskDelay(1000 / portTICK_PERIOD_MS);
     
  }
     
