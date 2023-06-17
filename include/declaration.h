@@ -3,4 +3,13 @@
 #include "freertos/task.h"
 #include "sra_board.h"
 
-void SERIES_LED_BLINK();
+void Task_Handle();
+typedef void (*funcptr1) ();
+typedef void (*funcptr2) ();
+
+typedef struct runfunc
+{
+    int s1,s2;
+    funcptr1 peformFunction1;
+    funcptr2 peformFunction2;
+}runtask;
