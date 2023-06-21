@@ -12,42 +12,42 @@ void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
     ESP_LOGI("declaration", "run_func");
 
     enable_switches();
-    if (p.s1 == 1)
+    if (s1 == 1)
     {
         p.s1 = SWITCH_1;
     }
 
-    else if(p.s1 == 2)
+    else if(s1 == 2)
     {
         p.s1 = SWITCH_2;
     }
 
-    else if(p.s1 == 3)
+    else if(s1 == 3)
     {
         p.s1 = SWITCH_3;
     }
 
-    else if(p.s1 == 4)
+    else if(s1 == 4)
     {
         p.s1 = SWITCH_4;
     }
 
-    if (p.s2 == 1)
+    if (s2 == 1)
     {
         p.s2 = SWITCH_1;
     }
 
-    else if(p.s2 == 2)
+    else if(s2 == 2)
     {
         p.s2 = SWITCH_2;
     }
 
-    else if(p.s2 == 3)
+    else if(s2 == 3)
     {
         p.s2 = SWITCH_3;
     }
 
-    else if(p.s2 == 4)
+    else if(s2 == 4)
     {
         p.s2 = SWITCH_4;
     }
