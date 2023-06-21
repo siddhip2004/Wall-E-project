@@ -1,4 +1,4 @@
-#include "declaration.h"
+#include "tasks.h"
 
 
 static TaskHandle_t first_func;
@@ -9,7 +9,7 @@ static runtask p;
  
 void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
 {
-    ESP_LOGI("declaration", "run_func");
+    ESP_LOGI("tasks", "run_func");
 
     enable_switches();
     if (s1 == 1)
@@ -67,13 +67,13 @@ void Task_Handle(int s1, int s2, void (*func1)(), void (*func2)())
     while(1){
 
     if(read_switch(p.s1)){
-    ESP_LOGI("declaration", "func1"); 
+    ESP_LOGI("tasks", "func1"); 
     vTaskResume(first_func);   
     }
 
 
     else if (read_switch(p.s2)){
-    ESP_LOGI("declaration", "func2"); 
+    ESP_LOGI("tasks", "func2"); 
     vTaskResume(second_func);   
     }
 
