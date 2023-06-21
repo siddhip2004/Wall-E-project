@@ -63,6 +63,7 @@ It uses [FreeRTOS](https://www.freertos.org/openrtos.html).
 <br>
 <br>
 The number of switches to use and address of functions that user gives are bound with the switches with help of structure
+<br>
 
 3. On flashing the commands are sent to ESP-32 to peform the required task
 
@@ -116,7 +117,7 @@ idf.py -p /dev/tty(port into use) flash monitor
 
 ## Demonstration :
 
-1. Press the switch that you have given as input and see your task getting implemented
+1. Press the switches that you have given as input and see your two tasks getting implemented
 ------------------
 
 ## Contributors :
