@@ -5,7 +5,7 @@ Making the bot peform in the manner user wants by providing it's own task/functi
 -------------------------------
 
  ## Table of Contents
- * [Multi-Functions](#multi-Functions)
+ * [Multi-Tasking Bot](#multi-Tasking-Bot)
      
     * [About The Project](#about-the-project)
       * [Tech Stack](#tech-stack)
