@@ -60,9 +60,8 @@ It uses [FreeRTOS](https://www.freertos.org/openrtos.html).
     <br>funcptr1 peformFunction1;
     <br>funcptr2 peformFunction2;<br>
 }runtask;
-<br>
-The number of switches to use and address of functions that user gives are bound with the switches with help of structure
-<br>
+      
+      The number of switches to use and address of functions that user gives are bound with the switches with help of structure
 
 3. On flashing the commands are sent to ESP-32 to peform the required task
 
