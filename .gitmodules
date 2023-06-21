@@ -1,0 +1,3 @@
+[submodule "Wall-E-project"]
+	path = Wall-E-project
+	url = git@github.com:siddhip2004/Wall-E-project.git

@@ -1,13 +1,11 @@
-# Multi-Tasking LEDs
+# Multi-Tasking Bot
 
-Blinking LEDs as per user's wish  using the switches on SRA board in two formats: 
- * ***Series*** blinking
- * ***Fibonacci*** blinking
+Making the bot peform in the manner user wants by providing it's own task/function
 
 -------------------------------
 
  ## Table of Contents
- * [Multi-Tasking LEDs](#multi-tasking-leds)
+ * [Multi-Tasking Bot](#multi-Tasking-Bot)
      
     * [About The Project](#about-the-project)
       * [Tech Stack](#tech-stack)
@@ -15,8 +13,10 @@ Blinking LEDs as per user's wish  using the switches on SRA board in two formats
       * [Data Processing](#data-processing)
    
    * [How to Use](#how-to-use)
+     * [Task's_Code](#Task's-Code)
+     * [Switch_Function_Input](#Switch-Function-Input)
      * [Prerequisites](#prerequisites)
-
+     
 
    * [Demonstration](#demonstration)
 
@@ -37,32 +37,45 @@ It uses [FreeRTOS](https://www.freertos.org/openrtos.html).
 ### <li>File Structure :</li>
 
 ```
-~~build
+├── CMakeLists.txt
+├── include
+│   └── tasks.h
+├── main
+│   ├── CMakeLists.txt
+│   ├── component.mk
+│   └── main.c
+├── README.md
+└── sdkconfig
 
-~~components
-    -sra-board-component
 
-~~front-end
-    -index.html
-
-~~CMakeLists.txt
-
-~~readme.md
-
-~~main
-   -CMakeLists.txt
-   -component.mk
-   -main.c
-
-~~sdkconfig
 ```
 
 ### <li>Data Processing :</li>
-On flashing the code to ESP-32 the commands are sent to the leds and the switches
+1. After the user writes it's function,the task is created with help of xTaskCreate()
+
+2. Structure stores user's data<br>
+   typedef struct runfunc <br>
+{<br>
+    int s1,s2;
+    <br>funcptr1 peformFunction1;
+    <br>funcptr2 peformFunction2;<br>
+}runtask;
+      
+      The number of switches to use and address of functions that user gives are bound with the switches with help of structure
+
+3. On flashing the commands are sent to ESP-32 to peform the required task
 
 ----------------
 
 ## How to Use :-
+<li> Task's Code :</li>
+
+In your required folder create a main.c file that contains the code of the function you want bot to peform
+
+<li> Switch_Function_Input :</li>
+
+In the main.c file already made, type Task_Handle() and
+inside it's paranthesis provide switch number and address of function (two each) to be peformed
 
 <li> Prerequisites :</li>
    
@@ -71,10 +84,19 @@ On flashing the code to ESP-32 the commands are sent to the leds and the switche
 1. Install ESP-IDF : https://github.com/espressif/esp-idf
 
 2. Clone the Project:
+(Make a components directory in required folder and clone the below there)
 ```sh
-git clone https://github.com/siddhip2004/Wall-E-project.git
+git clone --recursive https://github.com/siddhip2004/Wall-E-project.git
+
+git clone --recursive https://github.com/SRA-VJTI/sra-board-component.git
+```
+ Open the folder in your terminal 
+ and follow the below command
+```sh
+$(folder) get_idf
 ```
 
+like above use the following commands :
 
 3. Building The Project :
 ```sh
@@ -93,9 +115,7 @@ idf.py -p /dev/tty(port into use) flash monitor
 
 ## Demonstration :
 
-1. Press the switch  **1** on SRA board to see leds blink in the **series** pattern
-2. Press the switch **4** on SRA board to see leds blink in the **fibonacci** pattern
-
+1. Press the switches that you have given as input and see your two tasks getting implemented
 ------------------
 
 ## Contributors :
