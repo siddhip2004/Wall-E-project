@@ -61,7 +61,6 @@ It uses [FreeRTOS](https://www.freertos.org/openrtos.html).
     <br>funcptr2 peformFunction2;<br>
 }runtask;
 <br>
-<br>
 The number of switches to use and address of functions that user gives are bound with the switches with help of structure
 <br>
 
